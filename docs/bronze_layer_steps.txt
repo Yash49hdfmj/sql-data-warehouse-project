@@ -1,0 +1,57 @@
+sql datawarehouse project
+
+1. build bronze layer
+
+4 steps
+a) analyse - interview source system experts
+b) coding - data ingestion
+c) validating - data completion & schema checks 
+d) docs & versions - data documenting Versioning in GIT 
+
+init_database.sql 
+- create database
+- create bronze,silver,gold schemas
+
+CREATE DDL FOR TABLES
+
+Create tables for both system folders CRM and ERP respectivelt each having 3 tables csv files
+
+like 
+source CRM has
+- cust_info.csv
+- prd_info.csv
+- sales_details.csv
+
+source_erp has
+- cust-az12
+- loc_a101
+- px_cat_g1v2
+
+
+so we will have 6 ddl tables 
+bronze.crm_cust_info
+bronze.crm_pred_info
+bronze.crm_sales_details
+bronze.erp_loc_a101
+bronze.erp_cust_az12
+bronze.erp_px_cat_g1v2
+
+
+add truncate statements to each table and select * from tables to run and see values,columns
+
+now add new query as Bronze_procedure.sql using Create or alter procedure load all bronze tables wrap up 
+
+add try catch block using BEGIN TRY END TRY BEGIN CATCH
+
+DECLARE @start_time DATETIME, @end_time DATETIME,@batch_start_time DATETIME,@batch_end_time DATETIME;
+
+DATEDIFF() will give you interval btw 2 times 
+
+after save and rull all file 
+EXEC bronze.load_bronze
+
+you'll get result as time in seconds whole batch is executed 
+
+
+
+

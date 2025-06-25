@@ -1,0 +1,32 @@
+silver layer 
+steps 
+	1) explore data
+	2) cleanse data 
+			-> check quality bronze 
+			-> write data transformations
+			-> insert in silver 
+	3) validate check
+	4) GitHub commit silver 
+			-> doc & version
+			-> data flow & integrate
+
+----------------------------------------------------------------------------
+
+
+metadata cols -> added extra by data engineers not originated from source data
+eg. create_date , update_date , source_system , file_location
+
+helpful when corrupt issues happens in data warehouse ETL pipeline
+
+SILVER_TRANSFORMATIONS.sql
+
+(bronze.crm_cst_info & silver.crm_cst_info)
+
+transformations done
+- trim() for space strings removal
+- standardization for married,single,male,female
+- CASE WHEN 
+- Missing replace by NA
+- Duplicates remove IS NOT NULL 
+- ROW_NUMBER() window range function
+

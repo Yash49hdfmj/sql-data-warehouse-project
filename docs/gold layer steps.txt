@@ -1,0 +1,65 @@
+GOLD LAYER |
+----------------------------------------------------------------------------------------------
+Steps to be performed
+1) Analyse - explore & understand business objects
+2) Coding - data integration 
+		|
+		-------------> Build Business Object
+		|
+		-------------> Choose type Dimension vs Fact
+		|
+		-------------> Rename to friendly names
+
+3) Validating - data integration checks
+4) Docs & version GIT 
+		|
+		--------------> Data model , catalog , flow
+----------------------------------------------------------------------------------------------
+DATA MODELLING
+
+1. CONCEPTUAL DATA MODEL
+Raw data (1010) ---> Tables with relationships connected
+
+eg. customer creates orders has products like this 3 tables relationship 
+ 
+2. LOGICAL DATA MODEL    
+Primary key cols like ID , KEY related to other columns 
+
+3) PHYSICAL DATA MODEL
+Datatypes of each columns in all tables 
+Databricks provide automatic interface for creation
+
+-----------------------------------------------------------------------------------------------
+TYPES OF DATA MODELLING
+
+STAR SCHEMA 🌟 
+fact table in middle and dimension tables around
+fact table contains transaction events 
+dimension tables contains descriptive information
+star schema is easy 
+star schema has duplicates
+
+SNOWFLAKE SCHEMA ❄ 
+fact table in middle surrounded by many dim tables
+dim tables break into smaller sub-dims 
+snowflake is complex
+snowflake has large storage
+----------------------------------------------------------------------------------------------
+DIMENSION TABLES
+- descriptive information
+- product table has PRD_Name , PRD_Catg , PRD_Subcatg
+- what ? where ? 
+
+FACT TABLE
+- Transact events like ID , DATE , NUMBERS , MEASURES
+- How much ? How many ?
+-----------------------------------------------------------------------------------------------
+Build layers
+	- integrate
+	- aggregrate
+	- business logic 
+
+-------------------------------------------------------------
+Data Products (Star Schema) -> Data catalog (Tables, Columns, Relationships)
+
+Catalogs for user such as business analyst , data analyst to ask what data is about Questions
